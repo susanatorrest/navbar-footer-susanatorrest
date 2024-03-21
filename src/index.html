@@ -3,27 +3,195 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>FilmScape</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Personalización adicional de CSS */
+      .navbar {
+        padding-top: 20px; /* Ajuste del espaciado superior del navbar */
+        padding-bottom: 20px; /* Ajuste del espaciado inferior del navbar */
+      }
+
+      .form-search input[type="search"] {
+        width: 800px; /* Ancho de la barra de búsqueda en la versión web */
+      }
+
+      /* Media query para ajustar el margen izquierdo solo en la versión web */
+      @media (min-width: 992px) {
+        .form-search input[type="search"] {
+          margin-left: 30px; /* Margen izquierdo para desplazar la barra de búsqueda hacia la derecha */
+        }
+      }
+      .font-weight-bold {
+        font-weight: bold;
+      }
+
+      /* Media query para ajustar el ancho de la barra de búsqueda en tablet */
+      @media (max-width: 1024px) {
+        .form-search input[type="search"] {
+          width: 80%; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      /* Media query para ajustar el ancho de la barra de búsqueda en tablet */
+      @media (max-width: 1161px) {
+        .form-search input[type="search"] {
+          width: 600px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 991px) {
+        .form-search input[type="search"] {
+          width: 400px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 712px) {
+        .form-search input[type="search"] {
+          width: 300px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 616px) {
+        .form-search input[type="search"] {
+          width: 250px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 560px) {
+        .form-search input[type="search"] {
+          width: 180px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 485px) {
+        .form-search input[type="search"] {
+          width: 120px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      @media (max-width: 430px) {
+        .form-search input[type="search"] {
+          width: 180px; /* Ancho de la barra de búsqueda en tablets */
+        }
+      }
+
+      /* Media query para ocultar el título en dispositivos móviles */
+      @media (max-width: 430px) {
+        .navbar-brand {
+          display: none; /* Ocultar el título */
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">FILMSCAPE</a>
+        <!-- Toggle button -->
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-dark dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item font-weight-bold" href="#">HOME</a></li>
+            <li><hr class="dropdown-divider bg-white" /></li>
+            <li><a class="dropdown-item" href="#">TOP 50 MOVIES</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">POPULAR MOVIES</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">MOVIES NEWS</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">MOVIES NEWS</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">UPCOMING CALENDAR</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">MOVIES BY CATEGORIES</a></li>
+          </ul>
+        </div>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <form class="d-flex align-items-center form-search">
+              <div class="input-group">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <span class="input-group-text">
+                  <i class="fas fa-search text-black"></i>
+                </span>
+              </div>
+            </form>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-display="static"
+              aria-expanded="false"
+            >
+              <img
+                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(2).jpg"
+                class="rounded-circle"
+                height="35"
+                width="35"
+                alt="Avatar"
+              />
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end"
+              aria-labelledby="navbarDropdown"
+            >
+              <li><a class="dropdown-item" href="#">PROFILE</a></li>
+              <li><hr class="dropdown-divider bg-white" /></li>
+              <li>
+                <a class="dropdown-item font-weight-bold" href="#">SIGN OUT</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -1,1 +1,58 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.navbar-dark .nav-item .nav-link {
+  color: #fff;
+}
+
+.navbar-dark .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 0.25rem;
+  color: #fff;
+}
+
+.fa-li {
+  position: relative;
+  left: 0;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  background-color: rgb(26, 26, 26); /* Color de fondo negro */
+}
+
+/* Estilos para los elementos de enlace dentro del menú desplegable */
+.dropdown-item {
+  color: white !important; /* Color de texto blanco */
+}
+
+.dropdown-item:hover {
+  color: grey !important; /* Cambia el color del texto a gris al pasar el ratón */
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .btn-group {
+    order: -1;
+  }
+  .form-search {
+    margin-left: auto;
+  }
+  .navbar-brand {
+    order: -2;
+  }
+}
+
+.dropdown-menu-end {
+  position: absolute !important;
+}
